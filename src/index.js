@@ -9,6 +9,8 @@ const server = new GraphQLServer({
     type Query {
       user(userId: Int!): User!
       users(name:[String], age:[Int]): [User!]
+      post(postId: Int!): Post!      
+      posts: [Post!]!
     }
 
     type User {
@@ -18,6 +20,16 @@ const server = new GraphQLServer({
       married: Boolean
       average: Float
       status: String
+      posts: [Post!]!
+    }
+
+    type Post {
+      id: ID!
+      title: String!
+      content: String!
+      author: User!
+      picture: ID
+      
     }
   `,
 
@@ -33,6 +45,26 @@ const server = new GraphQLServer({
         const response = await axios.get(HOST_URL + `/users?${name}&${age}`)
         return response.data;
       },
+      post: async (parent, args, context, info) => {
+        const response = await axios.get(HOST_URL + '/posts/' + args.postId)
+        return response.data;
+      },
+      posts: async () => {
+        const response = await axios.get(HOST_URL + `/posts`)
+        return response.data;
+      }
+    },
+    Post: {
+      author: async (parent, args, context, info) => {
+        const response = await axios.get(HOST_URL + '/users/' + parent.author)
+        return response.data;
+      },
+    },
+    User: {
+      posts: async (parent, args, context, info) => {
+        const response = await axios.get(HOST_URL + '/posts/?author=' + parent.id)
+        return response.data;
+      }
     }
   }
 });
