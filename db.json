@@ -31,6 +31,20 @@
       "married": true,
       "average": 2.5,
       "status": "guest"
+    },
+    {
+      "name": "Ariya Ariya",
+      "age": 29,
+      "married": true,
+      "status": "active",
+      "id": 5
+    },
+    {
+      "name": "John",
+      "age": 29,
+      "married": false,
+      "status": "not_active",
+      "id": 6
     }
   ],
   "posts": [
@@ -39,27 +53,31 @@
       "title": "Inventore veritatis et quasi architecto",
       "content": "Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo inventore veritatis et quasi architecto beatae vitae dicta sunt explicabo.",
       "author": 1,
-      "picture": 1
+      "picture": 1,
+      "status": "PUBLISHED"
     },
     {
       "id": 2,
       "title": "Accusamus et iusto odio dignissimos ducimus qui ",
       "content": "similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus,",
       "author": 1,
-      "picture": 1
+      "picture": 1,
+      "status": "PUBLISHED"
     },
     {
       "id": 3,
       "title": "Reiciendis voluptatibus maiores alias consequatur aut",
       "content": "On provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus",
       "author": 2,
-      "picture": 2
+      "picture": 2,
+      "status": "PUBLISHED"
     },
     {
       "title": "Awesome post title",
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 4
     },
     {
@@ -67,6 +85,7 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 5
     },
     {
@@ -74,6 +93,7 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 6
     },
     {
@@ -81,6 +101,7 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 7
     },
     {
@@ -88,6 +109,7 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 8
     },
     {
@@ -95,7 +117,24 @@
       "content": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut",
       "author": 1,
       "picture": 2,
+      "status": "PUBLISHED",
       "id": 9
+    },
+    {
+      "title": "My first post",
+      "content": "Hello World",
+      "author": 1,
+      "picture": 1,
+      "status": "PUBLISHED",
+      "id": 10
+    },
+    {
+      "title": "THIS IS A DRAFT",
+      "content": "Hello World",
+      "author": 1,
+      "picture": 1,
+      "status": "DRAFT",
+      "id": 11
     }
   ],
   "pictures": [

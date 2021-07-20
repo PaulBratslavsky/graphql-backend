@@ -7,13 +7,50 @@ type Query {
   pictures: [Picture!]!
 }
 
+type Mutation {
+  addUser(data: AddUserInput!): User!
+  addPost(title: String!, content: String!, status: PostState!): Post! 
+  deletePost(id: ID!): Boolean
+  deleteUser(id: ID!): Boolean
+  updateUser(id: ID!, data: UpdateUserInput!): User!
+}
+
+input AddUserInput {
+  name: String!
+  age: Int!
+  married: Boolean 
+  status: UserState!
+}
+
+input UpdateUserInput {
+  name: String
+  age: Int
+  married: Boolean 
+    status: UserState
+}
+
+enum UserState {
+  active
+  not_active
+  trainee
+  guest
+}
+
+
+enum PostState {
+  PUBLISHED
+  PUBLIC
+  DRAFT
+}
+
+
 type User {
   id: ID!
   name: String!
   age: Int
   married: Boolean
   average: Float
-  status: String
+  status: UserState!
   posts: [Post!]!
   pictures: [Picture!]!
 }
@@ -24,6 +61,7 @@ type Post {
   content: String!
   author: User!
   picture: Picture
+  status: PostState!
 }
 
 type Picture {
